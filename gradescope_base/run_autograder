@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# keep line 2 empty for make_assignment to add following lines
+#NAME=0
+#SOLUTION=solution.py
+
+REPO_FOLDER='myclass_assignments'
+BASE_DIR=/autograder/$REPO_FOLDER
+
+# update git repo
+cd $BASE_DIR
+git pull
+# I think the next line is only necessary if you change the requirements after the first version of the assignment
+pip3 install -r $BASE_DIR/requirements.txt
+
+# change to assignment directory
+cd $BASE_DIR/assignment$NAME
+
+# delete any solution files or folders in the git repo
+rm -rf $SOLUTION
+
+# copy student submission to folder
+cp -r /autograder/submission/$SOLUTION ./
+
+python3 $BASE_DIR/gradescope_base/run_tests.py > /autograder/results/results.json
