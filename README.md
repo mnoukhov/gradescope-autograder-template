@@ -42,5 +42,5 @@ check assignment 0 for an example, it was created with `./make_assignment.sh 0 s
 ## updating the assignment
 because we're using the github `deploy_key` you just need to push your changes to this repo and that's it!
 
-the only time you should need to re-run `make_assignment.sh` and reupload the assignment on gradescope is if you change the name of the assignment (`$name`) or the name of the template (`$template`)
+the only time you should need to re-run `make_assignment.sh` and reupload the assignment on gradescope is if you change the name of the assignment (`$name`) or the name of the solution (`$solution`)
 
