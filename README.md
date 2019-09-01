@@ -18,6 +18,8 @@ pip install -r requirements.txt
 
 follow instructions [here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) and put the new key in `~/.ssh/deploy_key`
 
+3. change the `$YOUR_REPO` (your github repo) and `$REPO_FOLDER` (the folder the repo is cloned to) variables in the `gradescope_base/run_autograder` and `gradescope_base/setup.sh`
+
 
 ## making a new assignment
 1. create a folder named `assigment$name`
