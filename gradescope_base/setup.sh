@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-YOUR_REPO='git@github...'
-REPO_FOLDER='myclass_assignments'
+#GITHUB_REPO='git@github...'
+#REPO_NAME='myclass_assignments'
 
 cd /autograder/source
 
@@ -16,6 +16,6 @@ chmod 400 /root/.ssh/deploy_key
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 # Clone autograder files
-git clone $YOUR_REPO /autograder/$REPO_FOLDER
+git clone $GITHUB_REPO /autograder/$REPO_FOLDER
 # Install python dependencies
 pip3 install -r /autograder/$REPO_FOLDER/requirements.txt

@@ -1,26 +1,32 @@
 #!/usr/bin/env bash
 
+# CHANGE THESE FOR YOUR REPO!
+GITHUB_REPO='git@github.com:mnoukhov/gradescope-autograder-template.git'
+REPO_NAME="gradescope-autograder-template"
+
+
 # input the assignment number and the file that students have to fill out
 name=$1
 solution=${2:-"solution.py"}
 
 # delete previous files if any
-rm assignment$name.zip
+rm $name.zip
 
 # copy all files necessary for assignment
-mkdir -p zip_assignment$name
-cp gradescope_base/* zip_assignment$name/
+# make sure you have copied your deploy key to gradescope_base/
+mkdir -p zip_$name
+cp gradescope_base/* zip_$name/
 
-# copy github deploy keys for this assignment
-# make sure you've created github deploy keys in ~/.ssh
-cp ~/.ssh/deploy_key zip_assignment$name/
+# add assignment name and solution filename to run_autograder
+sed -i "2 i\NAME=$name" zip_$name/run_autograder
+sed -i "2 i\SOLUTION=$solution" zip_$name/run_autograder
+sed -i "2 i\REPO_NAME=$REPO_NAME" zip_$name/run_autograder
 
-# add assignment name and solution file to run_autograder
-sed -i "2 i\NAME=$name" zip_assignment$name/run_autograder
-sed -i "2 i\SOLUTION=$solution" zip_assignment$name/run_autograder
+sed -i "2 i\GITHUB_REPO=$GITHUB_REPO" zip_$name/setup.sh
+sed -i "2 i\REPO_NAME=$REPO_NAME" zip_$name/setup.sh
 
 # zip the assignement and delete folder
-zip -r -m -j assignment$name.zip zip_assignment$name/*
-rmdir zip_assignment$name
+zip -r -m -j $name.zip zip_$name/*
+rmdir zip_$name
 
 

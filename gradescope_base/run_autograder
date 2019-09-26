@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# keep line 2 empty for make_assignment to add following lines
+# make_assignment.sh will add following lines here
 #NAME=0
 #SOLUTION=solution.py
+#REPO_NAME='myclass_assignments'
 
-REPO_FOLDER='myclass_assignments'
-BASE_DIR=/autograder/$REPO_FOLDER
+BASE_DIR=/autograder/$REPO_NAME
 
 # update git repo
 cd $BASE_DIR
@@ -14,7 +14,7 @@ git pull
 pip3 install -r $BASE_DIR/requirements.txt
 
 # change to assignment directory
-cd $BASE_DIR/assignment$NAME
+cd $BASE_DIR/$NAME
 
 # delete any solution files or folders in the git repo
 rm -rf $SOLUTION
