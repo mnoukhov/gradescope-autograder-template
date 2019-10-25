@@ -2,7 +2,10 @@ import unittest
 
 from gradescope_utils.autograder_utils.decorators import weight, visibility
 
-from solution import Basics
+try:
+    from solution import Basics
+except Exception as e:
+    raise Exception(f'Couldnt import your class Basics from "solution.py", remember to work off of the template. The error is {e}')
 
 
 class TestBasics(unittest.TestCase):
