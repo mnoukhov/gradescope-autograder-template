@@ -6,9 +6,8 @@ a good template for setting up gradescope autograding with python
 - makes sure your solution files are deleted before testing on gradescope, therefore unaccessible to clever students trying `import solution`
 
 TODO:
-- allow for preventing student `print` output so they can't cheat by printing the test cases you use
-- allow blocking certain libraries (e.g. `numpy`) for assignments where they are prohibited
-- maybe make default integration tests such that you write `solution.py` and `solution_template.py` and tests are automatically created
+- block certain libraries (e.g. `numpy`) for assignments where they are prohibited
+- add default `timeout`s so students submissions don't do an infinite loop
 
 ## setup
 0. use python 3+ (3.7 is best)
@@ -22,12 +21,9 @@ follow instructions [here](https://developer.github.com/v3/guides/managing-deplo
 
 3. In `make_assignment.sh`, change the value of `GITHUB_REPO` to the git address of your repo (`git@github.com/...`) and the change the value of `REPO_NAME` to the name of your repo (e.g this one would be `gradescope_autograder_template`)
 
-3. change the `$YOUR_REPO` (your github repo) and `$REPO_FOLDER` (the folder the repo is cloned to) variables in the `gradescope_base/run_autograder` and `gradescope_base/setup.sh`
-
-
 ## making a new assignment
 1. create a new folder with your assignment name `$name`
-2. in the assignment folder, create a solution template file (or folder) that students will have to complete
+2. in the assignment folder, create a solution template file (or folder) that students will have to complete (e.g. `solution_template.py`
 3. in the assignment folder, create a completed solution file (or folder) `$solution`
 4. in the assignment folder, write `unittest` tests for the solution making sure that each file starts with `test_`
 
@@ -36,6 +32,7 @@ look at `assignment0` for an example!
 ## running your tests locally
 you can run all your tests in the assignment folder with `unittest`
 ```
+cd assignment0
 python -m unittest *
 ```
 
