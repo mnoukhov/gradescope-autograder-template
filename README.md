@@ -11,13 +11,8 @@ TODO:
 
 ## setup
 0. use python 3+ (3.7 is best)
-1. install the requirements
-```
-pip install -r requirements.txt
-```
-2. to make assignment updating easier, we can submit an assignment test once and from then on have the newest version pulled from github every time the test is run, to do this you need to create a github `deploy_key` that will let gradescope read the repo
-
-follow instructions [here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys). I recommend you make a `read-only` deploy key and regardless of where you put the deploy key, copy it over to `gradescope_base/deploy_key`
+1. install the requirements with `pip install -r requirements.txt`
+2. follow instructions [here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) to create a deploy key. I recommend you make a `read-only` deploy key and regardless of where you put the deploy key, copy it over to `gradescope_base/deploy_key`. (See ["updating the assignment"](#updating-the-assignment) for why we need deploy keys) 
 
 3. In `make_assignment.sh`, change the value of `GITHUB_REPO` to the git address of your repo (`git@github.com/...`) and the change the value of `REPO_NAME` to the name of your repo (e.g this one would be `gradescope_autograder_template`)
 
@@ -43,7 +38,9 @@ python -m unittest *
 check assignment 0 for an example, it was created with `./make_assignment.sh assignment0 solution.py`
 
 ## updating the assignment
-because we're using the github `deploy_key` you just need to push your changes to this repo and that's it! No need to interact with gradescope, all changes you make to your repo will be pulled by gradescope before autograding
+to make assignment updating easier, we can submit an assignment test once and from then on have the newest version pulled from github every time the test is run, this is why we use the `deploy_key` that will let gradescope read the repo
 
-the only time you should need to re-run `make_assignment.sh` and reupload the assignment on gradescope is if you change the name of the assignment (`$name`) or the name of the solution (`$solution`)
+So you just need to push your changes to this repo and that's it! No need to interact with gradescope, all changes you make to your repo will be pulled by gradescope before autograding
+
+The only time you should need to re-run `make_assignment.sh` and reupload the assignment on gradescope is if you change the name of the assignment (`$name`) or the name of the solution (`$solution`)
 
