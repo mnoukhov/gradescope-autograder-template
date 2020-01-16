@@ -22,4 +22,4 @@ rm -rf $SOLUTION
 # copy student submission to folder
 cp -r /autograder/submission/$SOLUTION ./
 
-python3 $BASE_DIR/gradescope_base/run_tests.py > /autograder/results/results.json
+python3 $BASE_DIR/gradescope_base/run_tests.py

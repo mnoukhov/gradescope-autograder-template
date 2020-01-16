@@ -3,7 +3,7 @@ class Basics:
         return a + b
 
     def subtract(self, a, b):
-        return a - c
+        return a - b
 
     def multiply(self, a, b):
         return a * b
