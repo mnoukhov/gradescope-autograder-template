@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# make_assignment.sh will add following lines here
-#NAME=0
-#SOLUTION=solution.py
-#REPO_NAME='myclass_assignments'
+# make_assignment.sh will replace the lines here, DO NOT REMOVE
+REPLACE_NAME
+REPLACE_SOLUTION
+REPLACE_REPO_NAME
 
 BASE_DIR=/autograder/$REPO_NAME
 

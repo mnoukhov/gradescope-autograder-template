@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-#GITHUB_REPO='git@github...'
-#REPO_NAME='myclass_assignments'
+# make_assignment.sh will replace the lines below, DO NOT REMOVE
+REPLACE_GITHUB_REPO
+REPLACE_REPO_NAME
 
 cd /autograder/source
 
@@ -16,6 +17,6 @@ chmod 400 /root/.ssh/deploy_key
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 # Clone autograder files
-git clone $GITHUB_REPO /autograder/$REPO_FOLDER
+git clone $GITHUB_REPO /autograder/$REPO_NAME
 # Install python dependencies
-pip3 install -r /autograder/$REPO_FOLDER/requirements.txt
+pip3 install -r /autograder/$REPO_NAME/requirements.txt
