@@ -8,6 +8,7 @@ a good template for setting up gradescope autograding with python
 TODO:
 - block certain libraries (e.g. `numpy`) for assignments where they are prohibited
 - add default `timeout`s so students submissions don't do an infinite loop
+- add `runner` user to subvert those very clever students https://www.seas.upenn.edu/~hanbangw/blog/hack-gs/
 
 ## setup
 0. use python 3+ (3.7 is best)
