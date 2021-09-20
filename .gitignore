@@ -105,3 +105,4 @@ venv.bak/
 
 # assignment files
 *.zip
+gradescope_base/deploy_key
