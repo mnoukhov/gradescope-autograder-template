@@ -41,9 +41,11 @@ python -m unittest *
 check assignment 0 for an example, it was created with `./make_assignment.sh assignment0 solution.py`
 
 ## updating the assignment
-to make assignment updating easier, we can submit an assignment test once and from then on have the newest version pulled from github every time the test is run, this is why we use the `deploy_key` that will let gradescope read the repo
+The regular way to update assignments is to upload each new version to the gradescope server, but this can be annoying. Instead, we can upload an assignment once and from then on have the newest version pulled from github every time the test is run. 
 
-So you just need to push your changes to this repo and that's it! No need to interact with gradescope, all changes you make to your repo will be pulled by gradescope before autograding
+So your code on gradescope needs to be able to pull your repo with the assignment tests. One way would be to make your repo public but this means your students could easily find the exact tests you're running! Another way would be to add your private ssh key to the code that runs the gradescope tests, but this means that anyone with that key can access all your other private repos! Instead we use a `deploy_key` that acts as a verification of your github account just for the purposes of pulling this specific repo. This means you can keep your repo private from your students, but the code on gradescope's servers will be able to pull any updates for this specific repo but for no other private repos of yours. 
+
+Once you set this up and upload an assignment for the first time, everything is done! You just need to push your changes to your repo and they will be pulled any time a test is run so your students always get the latest updates to your tests. No need to interact with gradescope, all changes you make to your repo will be pulled by gradescope before autograding
 
 The only time you should need to re-run `make_assignment.sh` and reupload the assignment on gradescope is if you change the name of the assignment (`$name`) or the name of the solution (`$solution`)
 
