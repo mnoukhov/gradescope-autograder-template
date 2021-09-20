@@ -14,9 +14,9 @@ TODO:
 0. use python 3+ (3.7 is best)
 1. install the requirements with `pip install -r requirements.txt`
 2. create and set up a deploy key (See ["updating the assignment"](#updating-the-assignment) for why we need deploy keys) 
-  i. follow instructions [here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) to create a deploy key. I recommend you make a deploy key without a passphrase at the location `~/.ssh/deploy_key` 
-  ii. Go into your github repo settings (`settings` with the gear icon -> `deploy keys`) and add the public key `~/.ssh/deploy_key.pub`
-  iii. Copy over your private key `~/.ssh/deploy_key` to `gradescope_base/deploy_key`. I recommend that you do not push this private key to your github repo so I've added it to the `.gitignore`
+    1. follow instructions [here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) to create a deploy key. I recommend you make a deploy key without a passphrase at the location `~/.ssh/deploy_key` 
+    2. Go into your github repo settings (`settings` with the gear icon -> `deploy keys`) and add the public key `~/.ssh/deploy_key.pub`
+    3. Copy over your private key `~/.ssh/deploy_key` to `gradescope_base/deploy_key`. I recommend that you do not push this private key to your github repo so I've added it to the `.gitignore`
 3. In `make_assignment.sh`, change the value of `GITHUB_REPO` to the git address of your repo (`git@github.com/...`) and the change the value of `REPO_NAME` to the name of your repo (e.g this one would be `gradescope_autograder_template`)
 
 ## making a new assignment
