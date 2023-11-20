@@ -18,11 +18,11 @@ TODO:
     1. follow instructions [here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) to create a deploy key using *RSA* and *without a passphrase*. I recommend you make the deploy key at the location `~/.ssh/deploy_key` 
     2. Go into your github repo settings (`settings` with the gear icon -> `deploy keys`) and add the public key `~/.ssh/deploy_key.pub`
     3. Copy over your private key `~/.ssh/deploy_key` to `gradescope_base/deploy_key`. I recommend that you do not push this private key to your github repo so I've added it to the `.gitignore`
-3. In `make_assignment.sh`, change the value of `GITHUB_REPO` to the git address of your repo (`git@github.com/...`) and the change the value of `REPO_NAME` to the name of your repo (e.g this one would be `gradescope_autograder_template`)
+3. In `make_assignment.sh`, change the value of `GITHUB_REPO` to the SSH git address of your repo (`git@github.com/USERNAME/REPONAME.git`) and the change the value of `REPO_NAME` to the name of your repo (e.g this one would be `gradescope_autograder_template`)
 
 ## making a new assignment
 1. create a new folder with your assignment name `$name`
-2. in the assignment folder, create a solution template file (or folder) that students will have to complete (e.g. `solution_template.py`
+2. in the assignment folder, create a solution template file (or folder) that students will have to complete (e.g. `solution_template.py`)
 3. in the assignment folder, create a completed solution file (or folder) `$solution`
 4. in the assignment folder, write `unittest` tests for the solution making sure that each file starts with `test_`
 
