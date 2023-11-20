@@ -12,7 +12,7 @@ TODO:
 - add `runner` user to subvert those very clever students https://www.seas.upenn.edu/~hanbangw/blog/hack-gs/
 
 ## setup
-0. use python 3+ (3.7 is best)
+0. use python 3+ (> 3.7 is best)
 1. install the requirements with `pip install -r requirements.txt`
 2. create and set up a deploy key (See ["updating the assignment"](#updating-the-assignment) for why we need deploy keys) 
     1. follow instructions [here](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) to create a deploy key using *RSA* and *without a passphrase*. I recommend you make the deploy key at the location `~/.ssh/deploy_key` 
